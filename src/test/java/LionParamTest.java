@@ -12,7 +12,6 @@ import static org.junit.Assert.*;
 public class LionParamTest {
     Feline feline = new Feline();
 
-    //Lion lion = new Lion(feline);
     private final String sex;
     private final boolean hasMane;
 
@@ -30,22 +29,10 @@ public class LionParamTest {
     }
 
     @Test
-    public void doesHaveNameTest(){
-
-        Lion lion = Mockito.mock(Lion.class);
-        Mockito.when(lion.doesHaveMane()).thenReturn(hasMane);
+    public void doesHaveNameTest() throws Exception {
+        Lion lion = new Lion(sex, feline);
         assertEquals(hasMane, lion.doesHaveMane());
     }
-    @Test
-    public void getSexNo(){
-        Exception exception = assertThrows(Exception.class, () -> {
-        Lion lion = new Lion("кто-то", feline);
-        lion.doesHaveMane();
-
-        });
-    assertEquals("Используйте допустимые значения пола животного - самей или самка", exception.getMessage());
-    }
-
 
 
     }

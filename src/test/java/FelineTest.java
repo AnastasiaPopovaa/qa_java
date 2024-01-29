@@ -13,8 +13,6 @@ import static org.junit.Assert.assertEquals;
 @RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
 
-    @Mock
-    Animal animal ;
     Feline feline = new Feline();
 
     @Test
