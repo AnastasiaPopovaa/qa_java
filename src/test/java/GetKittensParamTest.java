@@ -11,11 +11,11 @@ import static org.junit.Assert.assertEquals;
 
 public class GetKittensParamTest {
     private final int numOfKittens;
-    private final int result;
+    private final int expected;
 
-    public GetKittensParamTest(int numOfKittens, int result){
+    public GetKittensParamTest(int numOfKittens, int expected){
         this.numOfKittens = numOfKittens;
-        this.result = result;
+        this.expected = expected;
 
     }
 
@@ -32,6 +32,6 @@ public class GetKittensParamTest {
     @Test
     public void getKittensParamTest(){
         Feline feline = new Feline();
-        assertEquals(feline.getKittens(numOfKittens), result);
+        assertEquals(expected, feline.getKittens(numOfKittens));
     }
 }

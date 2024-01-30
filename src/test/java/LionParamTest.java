@@ -3,7 +3,6 @@ import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.mockito.Mockito;
 
 import static org.junit.Assert.*;
 
@@ -13,11 +12,11 @@ public class LionParamTest {
     Feline feline = new Feline();
 
     private final String sex;
-    private final boolean hasMane;
+    private final boolean expectedMane;
 
-    public LionParamTest(String sex, Boolean hasMane) throws Exception {
+    public LionParamTest(String sex, boolean expectedMane) throws Exception {
         this.sex = sex;
-        this.hasMane = hasMane;
+        this.expectedMane = expectedMane;
     }
 
     @Parameterized.Parameters
@@ -31,7 +30,7 @@ public class LionParamTest {
     @Test
     public void doesHaveNameTest() throws Exception {
         Lion lion = new Lion(sex, feline);
-        assertEquals(hasMane, lion.doesHaveMane());
+        assertEquals(expectedMane, lion.doesHaveMane()); //порядок ОР и ФР не нарушен
     }
 
 
